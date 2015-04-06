@@ -1,15 +1,20 @@
 class CharCounter
-
-    def initialize ()
-        @un_hash = Hash.new(0) 
-    end
         
-    def count(un_string)
-        un_string.split("")
-        un_string.each do
-            |letra| un_hash[letra] +=1
+    def self.count(un_string)
+
+        @un_hash = Hash.new
+        if un_string!=nil
+          el_string_separado = un_string.gsub(/\s+/, "").split(//)
+          el_string_separado.each do
+            |letra|
+              if @un_hash.has_key?(letra)
+                @un_hash[letra] +=1
+              else
+                @un_hash[letra] = 1
+              end
+          end
         end
-        return un_hash
+        @un_hash
     end
 
 end
