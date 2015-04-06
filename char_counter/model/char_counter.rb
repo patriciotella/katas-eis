@@ -1,10 +1,10 @@
 class CharCounter
         
-    def self.count(un_string)
+    def self.count(una_frase)
 
         @un_hash = Hash.new
-        if un_string!=nil
-          el_string_separado = un_string.gsub(/\s+/, "").split(//)
+        if una_frase!=nil
+          el_string_separado = una_frase.gsub(/\s+/, "").split(//)
           el_string_separado.each do
             |letra|
               if @un_hash.has_key?(letra)
