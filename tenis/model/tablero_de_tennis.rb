@@ -59,8 +59,6 @@ class TableroDeTennis
         pharse= 30
       when 3
         pharse= 40
-      else
-        pharse= "definir advantage"
     end
     pharse
   end

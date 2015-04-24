@@ -1,7 +1,7 @@
 require 'rspec'
 require_relative '../model/tablero_de_tennis.rb'
 
-describe 'Tablero de Tennis' do
+describe 'Tablero de Tennis, test pedidos' do
 
   partido = TableroDeTennis.new
 
@@ -61,5 +61,17 @@ describe 'Tablero de Tennis' do
     partido.set_counter.should == [0,0]
     partido.game_counter.should == [0,0]
     partido.point_counter.should == [0,0]
+  end
+end
+
+describe 'testeo completo de funcionalidades' do
+
+  otro_partido = TableroDeTennis.new
+
+  it 'una vez iniciado el partido, testeo del punto a punto' do
+    otro_partido.anotacion_jugador 1
+    otro_partido.anotacion_jugador 1
+    otro_partido.point_counter.should == [2,0]
+    otro_partido.get_resultado.should == "30,0"
   end
 end
