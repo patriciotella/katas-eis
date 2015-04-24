@@ -19,4 +19,12 @@ describe 'Tablero de Tennis' do
     partido.point_counter.should == [1,0]
     partido.get_resultado.should == "15,0"
   end
+
+  it 'cuando el jugador 2 anota, se ve reflejado en el marcador' do
+
+    partido.anotacion_jugador_dos
+
+    partido.point_counter.should == [1,1]
+    partido.get_resultado.should == "15,15"
+  end
 end

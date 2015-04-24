@@ -22,6 +22,10 @@ class TableroDeTennis
     point_counter[0] = point_counter.first + 1
   end
 
+  def anotacion_jugador_dos
+    point_counter[1] = point_counter.last + 1
+  end
+
   def pharse_tennis_score(point)
     case point
       when 0
