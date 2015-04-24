@@ -71,7 +71,14 @@ describe 'testeo completo de funcionalidades' do
   it 'una vez iniciado el partido, testeo del punto a punto' do
     otro_partido.anotacion_jugador 1
     otro_partido.anotacion_jugador 1
+
     otro_partido.point_counter.should == [2,0]
     otro_partido.get_resultado.should == "30,0"
+
+    otro_partido.anotacion_jugador 2
+
+    otro_partido.point_counter.should == [2,1]
+    otro_partido.get_resultado.should == "30,15"
+
   end
 end
