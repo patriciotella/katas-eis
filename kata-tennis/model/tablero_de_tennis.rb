@@ -29,7 +29,17 @@ class TableroDeTennis
   end
 
   def game_jugador(nro_de_jugador)
-    game_counter[nro_de_jugador - 1] = game_counter[nro_de_jugador - 1] + 1
+
+    if game_counter[nro_de_jugador - 1]<= 5
+      game_counter[nro_de_jugador - 1] = game_counter[nro_de_jugador - 1] + 1
+    else
+      @game_counter = [0,0]
+      set_jugador(nro_de_jugador)
+    end
+  end
+
+  def set_jugador(nro_de_jugador)
+    set_counter[nro_de_jugador - 1] = set_counter[nro_de_jugador - 1] + 1
   end
 
   def pharse_tennis_score(point)

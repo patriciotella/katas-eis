@@ -39,4 +39,17 @@ describe 'Tablero de Tennis' do
     partido.point_counter.should == [0,0]
     partido.get_resultado.should == "0,0"
   end
+
+  it 'cuando el jugador uno gana 6 games gana el set y los games y puntos vuelven a 0' do
+
+    n=0
+    while (n<30)
+      partido.anotacion_jugador 1
+      n+=1
+    end
+
+    partido.set_counter.should == [1,0]
+    partido.game_counter.should == [0,0]
+    partido.point_counter.should == [0,0]
+  end
 end
