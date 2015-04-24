@@ -30,7 +30,7 @@ class TableroDeTennis
 
   def game_jugador(nro_de_jugador)
 
-    if game_counter[nro_de_jugador - 1]<= 5
+    if game_counter[nro_de_jugador - 1]< 5
       game_counter[nro_de_jugador - 1] = game_counter[nro_de_jugador - 1] + 1
     else
       @game_counter = [0,0]
