@@ -52,4 +52,14 @@ describe 'Tablero de Tennis' do
     partido.game_counter.should == [0,0]
     partido.point_counter.should == [0,0]
   end
+
+  it 'cuando el jugador uno gana 2 sets gana el partido e imprime en pantalla el ganador' do
+
+    partido.set_jugador 1
+    partido.set_jugador 1
+
+    partido.set_counter.should == [0,0]
+    partido.game_counter.should == [0,0]
+    partido.point_counter.should == [0,0]
+  end
 end
