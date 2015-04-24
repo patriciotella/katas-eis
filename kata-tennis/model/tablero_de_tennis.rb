@@ -18,12 +18,18 @@ class TableroDeTennis
     @point_counter
   end
 
-  def anotacion_jugador_uno
-    point_counter[0] = point_counter.first + 1
+  def anotacion_jugador nro_de_jugador
+
+    if point_counter[nro_de_jugador - 1] <= 3
+      point_counter[nro_de_jugador - 1] = point_counter[nro_de_jugador - 1] + 1
+    else
+      @point_counter = [0,0]
+      game_jugador(nro_de_jugador)
+    end
   end
 
-  def anotacion_jugador_dos
-    point_counter[1] = point_counter.last + 1
+  def game_jugador(nro_de_jugador)
+    game_counter[nro_de_jugador - 1] = game_counter[nro_de_jugador - 1] + 1
   end
 
   def pharse_tennis_score(point)
