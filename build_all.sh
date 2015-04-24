@@ -4,5 +4,5 @@ bundle install
 cd char_counter
 bundle exec rake
 cd ..
-cd kata-tennis
+cd tenis
 bundle exec rake
