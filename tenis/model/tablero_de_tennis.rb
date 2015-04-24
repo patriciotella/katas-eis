@@ -20,7 +20,7 @@ class TableroDeTennis
 
   def anotacion_jugador nro_de_jugador
 
-    if point_counter[nro_de_jugador - 1] <= 3
+    if point_counter[nro_de_jugador - 1] < 3
       point_counter[nro_de_jugador - 1] = point_counter[nro_de_jugador - 1] + 1
     else
       @point_counter = [0,0]

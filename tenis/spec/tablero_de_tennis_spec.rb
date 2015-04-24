@@ -33,7 +33,6 @@ describe 'Tablero de Tennis, test pedidos' do
     partido.anotacion_jugador 1
     partido.anotacion_jugador 1
     partido.anotacion_jugador 1
-    partido.anotacion_jugador 1
 
     partido.game_counter.should == [1,0]
     partido.point_counter.should == [0,0]
@@ -43,7 +42,7 @@ describe 'Tablero de Tennis, test pedidos' do
   it 'cuando el jugador uno gana 6 games gana el set y los games y puntos vuelven a 0' do
 
     n=0
-    while (n<30)
+    while (n<24)
       partido.anotacion_jugador 1
       n+=1
     end
@@ -79,6 +78,18 @@ describe 'testeo completo de funcionalidades' do
 
     otro_partido.point_counter.should == [2,1]
     otro_partido.get_resultado.should == "30,15"
+
+    otro_partido.anotacion_jugador 1
+    otro_partido.anotacion_jugador 2
+
+    otro_partido.point_counter.should == [3,2]
+    otro_partido.get_resultado.should == "40,30"
+
+    otro_partido.anotacion_jugador 1
+
+    otro_partido.point_counter.should == [0,0]
+    otro_partido.get_resultado.should == "0,0"
+    otro_partido.game_counter.should == [1,0]
 
   end
 end
