@@ -55,7 +55,6 @@ describe 'Tablero de Tennis, test pedidos' do
   it 'cuando el jugador uno gana 2 sets gana el partido e imprime en pantalla el ganador' do
 
     partido.set_jugador 1
-    partido.set_jugador 1
 
     partido.set_counter.should == [0,0]
     partido.game_counter.should == [0,0]
@@ -108,5 +107,44 @@ describe 'testeo completo de funcionalidades' do
     otro_partido.game_jugador 2
 
     otro_partido.game_counter.should == [0,0]
+    otro_partido.set_counter.should == [0,1]
+  end
+
+  it'testeo del ultimo game y gana el partido' do
+
+    otro_partido.game_jugador 1
+    otro_partido.game_jugador 2
+
+    otro_partido.game_counter.should == [1,1]
+    otro_partido.set_counter.should == [0,1]
+
+    otro_partido.game_jugador 1
+    otro_partido.game_jugador 2
+    otro_partido.game_jugador 1
+    otro_partido.game_jugador 2
+    otro_partido.game_jugador 1
+    otro_partido.game_jugador 2
+    otro_partido.game_jugador 1
+    otro_partido.game_jugador 2
+
+    otro_partido.game_counter.should == [5,5]
+    otro_partido.set_counter.should == [0,1]
+
+    otro_partido.anotacion_jugador 2
+    otro_partido.anotacion_jugador 2
+    otro_partido.anotacion_jugador 2
+
+    otro_partido.game_counter.should == [5,5]
+    otro_partido.set_counter.should == [0,1]
+    otro_partido.point_counter.should == [0,3]
+    otro_partido.get_resultado.should == "0,40"
+
+    otro_partido.anotacion_jugador 2
+
+    otro_partido.game_counter.should == [0,0]
+    otro_partido.set_counter.should == [0,0]
+    otro_partido.point_counter.should == [0,0]
+    otro_partido.get_resultado.should == "0,0"
+
   end
 end
