@@ -148,3 +148,23 @@ describe 'testeo completo de funcionalidades' do
 
   end
 end
+
+describe 'ventaja en un game' do
+
+  nuevo_partido = TableroDeTennis.new
+
+  it 'estando 40-40 si el jugador 1 anota un punto deberia quedar en ventaja' do
+
+    nuevo_partido.anotacion_jugador 1
+    nuevo_partido.anotacion_jugador 1
+    nuevo_partido.anotacion_jugador 1
+    nuevo_partido.anotacion_jugador 2
+    nuevo_partido.anotacion_jugador 2
+    nuevo_partido.anotacion_jugador 2
+
+    nuevo_partido.anotacion_jugador 1
+
+    nuevo_partido.get_resultado.should == "ventaja jugador 1"
+
+  end
+end
