@@ -21,20 +21,21 @@ class TableroDeTennis
   def anotacion_jugador nro_de_jugador
 
     if point_counter[nro_de_jugador - 1] < 3
-      #puts "es menor a 3"
       point_counter[nro_de_jugador - 1] = point_counter[nro_de_jugador - 1] + 1
     else
       if point_counter[0]==point_counter[1]
-        #puts "estan iguales"
         point_counter[nro_de_jugador - 1] = point_counter[nro_de_jugador - 1] + 1
       else
-        if tiene_ventaja(nro_de_jugador)
-          #puts " no estan iguales y tiene ventaja"
+        if tiene_ventaja nro_de_jugador
           @point_counter = [0,0]
           game_jugador(nro_de_jugador)
         else
-          #puts "no estan iguales y no tiene ventaja"
-          point_counter[nro_de_jugador - 1] = point_counter[nro_de_jugador - 1] + 1
+          if point_counter[nro_de_jugador-1]== point_counter.max
+          @point_counter = [0,0]
+          game_jugador(nro_de_jugador)
+          else
+            point_counter[nro_de_jugador - 1] = point_counter[nro_de_jugador - 1] + 1
+          end
         end
       end
     end
@@ -96,9 +97,9 @@ class TableroDeTennis
 
   def tiene_ventaja(nro_de_jugador)
     if point_counter[0]==point_counter[nro_de_jugador-1]
-      ventaja = point_counter[0]= point_counter[1] + 1
+      ventaja = point_counter[0]== point_counter[1] + 1
     else
-      ventaja = point_counter[1]= point_counter[0] + 1
+      ventaja = point_counter[1]== point_counter[0] + 1
     end
     ventaja
   end

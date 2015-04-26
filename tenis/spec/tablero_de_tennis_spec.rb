@@ -164,7 +164,16 @@ describe 'ventaja en un game' do
 
     nuevo_partido.anotacion_jugador 1
 
+    nuevo_partido.point_counter.should == [4,3]
     nuevo_partido.get_resultado.should == "ventaja jugador 1"
 
+  end
+
+  it 'deberian volver a estar 40-40 cuando anote el jugador 2' do
+
+    nuevo_partido.anotacion_jugador 2
+
+    nuevo_partido.point_counter.should == [4,4]
+    nuevo_partido.get_resultado.should == "40,40"
   end
 end
