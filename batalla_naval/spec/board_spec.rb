@@ -14,7 +14,7 @@ describe 'Board' do
 
   end
 
-  it'given a small ship in position 1,1 then de data of the cells is not empty' do
+  it'given a small ship in position 1,1 then the data of the cells is not empty' do
 
     board.alocate_small_ship_in(1,1)
 
@@ -22,4 +22,12 @@ describe 'Board' do
 
   end
 
+  it 'given a large ship in position 1,1 and 1,2 then the data of the cells is not empty' do
+
+    board.alocate_large_ship_in(1,1)
+
+    expect(board.get_data_of(1,1)).not_to eq("water")
+    expect(board.get_data_of(1,2)).not_to eq("water")
+
+  end
 end

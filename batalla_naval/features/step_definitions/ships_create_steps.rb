@@ -11,3 +11,7 @@ end
 Then(/^position "([^"]*)":"([^"]*)" is not empty$/) do |x, y|
   expect(@board.empty_position(x.to_i,y.to_i)).to eq(false)
 end
+
+Given(/^I create a large ship in position "([^"]*)":"([^"]*)"$/) do |x, y|
+  @board.alocate_large_ship_in(x.to_i,y.to_i)
+end
