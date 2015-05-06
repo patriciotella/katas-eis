@@ -32,7 +32,11 @@ class Board
   end
 
   def shoot_position (x,y)
-    @cells[x-1][y-1].shoot_position
+    if (@x>x && @y>y)
+      @cells[x-1][y-1].shoot_position
+    else
+      raise InvalidLocation
+    end
   end
 
 end

@@ -67,4 +67,10 @@ describe 'Extras' do
 
   end
 
+  it'try to shoot in a invalid location and raise an exception_message' do
+
+    expect{board.shoot_position(3,5)}.to raise_exception InvalidLocation
+
+  end
+
 end
