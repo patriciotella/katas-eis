@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../model/board.rb'
+require_relative '../model/battle_ship.rb'
 
 describe 'Board' do
 
@@ -30,4 +30,17 @@ describe 'Board' do
     expect(board.get_data_of(1,2)).not_to eq("water")
 
   end
+end
+
+describe 'Game Choices' do
+
+  board = Board.new(5,5)
+  board.alocate_large_ship_in(3,3)
+
+  it 'shooting at position 3,3 the large ship gets hit' do
+
+    expect(board.shoot_position(3,3)).to eq("hit")
+
+  end
+
 end
