@@ -43,4 +43,10 @@ describe 'Game Choices' do
 
   end
 
+  it 'shoot at position 3,2, since there is no ship there gets water ' do
+
+    expect(board.shoot_position(3,2)).to eq("water")
+
+  end
+
 end

@@ -1,3 +1,5 @@
+require_relative '../../batalla_naval/model/cell_item'
+
 class Board
 
   def initialize(x,y)
@@ -25,37 +27,4 @@ class Board
   def shoot_position (x,y)
     @cells[x][y].shoot_position
   end
-end
-
-class Water
-
-  def get_data
-    "water"
-  end
-
-end
-
-class SmallShip
-
-  def get_data
-    ""
-  end
-
-end
-
-class LargeShip
-
-  def initialize(front,back)
-    @front = front
-    @back = back
-  end
-
-  def shoot_position
-    "hit"
-  end
-
-  def get_data
-    ""
-  end
-
 end

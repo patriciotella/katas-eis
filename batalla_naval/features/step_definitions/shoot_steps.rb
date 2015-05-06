@@ -11,3 +11,8 @@ end
 Then(/^I get hit$/) do
   expect(@result).to eq("hit")
 end
+
+Then(/^I get water$/) do
+  expect(@result).to eq("water")
+end
+
