@@ -56,3 +56,15 @@ describe 'Game Choices' do
   end
 
 end
+
+describe 'Extras' do
+
+  board = Board.new(5,5)
+
+  it'try to alocate a ship in a invalid location and raise an exception_message' do
+
+    expect{board.alocate_large_ship_in(3,5)}.to raise_exception InvalidLocation
+
+  end
+
+end
