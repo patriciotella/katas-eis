@@ -49,4 +49,10 @@ describe 'Game Choices' do
 
   end
 
+  it 'shoot at position 3,4 hit de second part of the board and its sink ' do
+
+    expect(board.shoot_position(3,4)).to eq("sink")
+
+  end
+
 end
