@@ -17,12 +17,20 @@ class Board
     @cells[x-1][y-1].instance_of?Water
   end
 
+  def belong_to_board(x,y)
+    @x>x && @y>y
+  end
+
   def alocate_small_ship_in(x,y)
+    if belong_to_board(x,y)
     @cells[x-1][y-1]= SmallShip.new
+    else
+      raise InvalidLocation
+    end
   end
 
   def alocate_large_ship_in(x,y)
-    if (@x>x && @y>y)
+    if belong_to_board(x,y)
       large_ship = LargeShip.new([x-1,y-1],[x-1,y])
       @cells[x-1][y-1]= large_ship
       @cells[x-1][y] = large_ship
@@ -32,7 +40,7 @@ class Board
   end
 
   def shoot_position (x,y)
-    if (@x>x && @y>y)
+    if belong_to_board(x,y)
       @cells[x-1][y-1].shoot_position
     else
       raise InvalidLocation
