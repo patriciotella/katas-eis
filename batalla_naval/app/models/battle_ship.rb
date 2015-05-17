@@ -1,5 +1,5 @@
-require_relative '../../batalla_naval/model/cell_item'
-require_relative '../../batalla_naval/model/battle_ship_ex'
+require_relative '../models/cell_item.rb'
+require_relative '../models/battle_ship_ex.rb'
 
 class Board
 

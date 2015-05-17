@@ -1,4 +1,4 @@
-require_relative '../../model/battle_ship'
+require_relative '../../../batalla_naval/app/models/battle_ship.rb'
 
 Given(/^a board with dimensions "(\d+)" x "(\d+)"$/) do |x, y|
   @board = Board.new(x.to_i,y.to_i)

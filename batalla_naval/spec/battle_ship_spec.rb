@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../model/battle_ship.rb'
+require_relative '../../batalla_naval/app/models/battle_ship'
 
 describe 'Board' do
 
