@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 ruby '2.2.0'
+
 gem 'thin' # or mongrel
 gem 'rake'
 gem 'slim'
-
 
 gem 'cucumber'
 gem 'capybara'
@@ -18,3 +18,4 @@ gem 'byebug'
 
 gem 'erubis', '~> 2.7.0'
 gem 'padrino', '0.11.2'
+gem 'padrino-sprockets', :require => "padrino/sprockets"

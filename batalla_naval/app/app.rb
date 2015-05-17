@@ -1,11 +1,11 @@
 module Battleship
   class App < Padrino::Application
     register Padrino::Rendering
-    register Padrino::Mailer
+    #register Padrino::Mailer
     register Padrino::Helpers
-    register Padrino::Sprockets
+    #register Padrino::Sprockets
     #register Padrino::Admin::AccessControl
-    sprockets :minify => (Padrino.env == :production)
+    #sprockets :minify => (Padrino.env == :production)
 
     enable :sessions
     
@@ -13,6 +13,14 @@ module Battleship
         File.read(File.join('public', 'index.html'))
     end
 
+    get 'mipagina' do
+      render 'batalla/inicio'
+    end
+
+    post 'mipagina' do
+      @nombre = params[:nombre]
+      render 'batalla/inicio'
+    end
 
     ##
     # Caching support
