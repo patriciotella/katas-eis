@@ -23,7 +23,7 @@ end
 class SmallShip < CellItem
 
   def get_data
-    ""
+    "SmallShip"
   end
 
 end
@@ -42,7 +42,7 @@ class LargeShip < CellItem
   end
 
   def get_data
-    ""
+    "LargeShip"
   end
 
   def get_status
