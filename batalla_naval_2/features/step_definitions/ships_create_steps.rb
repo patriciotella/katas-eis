@@ -1,4 +1,4 @@
-require_relative '../../../batalla_naval/app/models/battle_ship.rb'
+require_relative '../../app/models/battle_ship.rb'
 require 'uri'
 require 'cgi'
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
