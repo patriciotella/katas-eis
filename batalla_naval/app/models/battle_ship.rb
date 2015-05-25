@@ -23,7 +23,7 @@ class Board
 
   def alocate_small_ship_in(x,y)
     if belong_to_board(x,y)
-    @cells[x-1][y-1]= SmallShip.new
+      @cells[x-1][y-1]= SmallShip.new
     else
       raise InvalidLocation
     end

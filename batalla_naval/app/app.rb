@@ -60,7 +60,7 @@ module Battleship
       @xShootCoord = params[:xShootCoord]
       @yShootCoord = params[:yShootCoord]
       @game = session[:game]
-      @shooting_result = @game.shoot_position(@xShootCoord.to_i,@yShootCoord.to_i).to_s
+      @shooting_result = @game.shoot_position(@xShootCoord.to_i,@yShootCoord.to_i)
       session[:game]=@game
       render 'batalla/inicio'
     end

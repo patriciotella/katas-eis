@@ -17,8 +17,8 @@
 
 
         <p>Disparo a coord : <%= @xCoord %> , <%= @yCoord %> </p>
-        <p>Data en posicion : <%= @coord_result %></p>
-        <p>Resultado del disparo : <%= @shooting_result %></p>
+        <p id="coord_result">Data en posicion : <%= @coord_result %></p>
+        <p id="shoot_result">Resultado del disparo : <%= @shooting_result %></p>
 
         <form method="POST" action="getCoord">
           <%= csrf_token_field %>

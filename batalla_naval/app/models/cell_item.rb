@@ -26,6 +26,10 @@ class SmallShip < CellItem
     "SmallShip"
   end
 
+  def shoot_position
+    "sink"
+  end
+
 end
 
 class LargeShip < CellItem

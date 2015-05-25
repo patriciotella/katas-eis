@@ -24,15 +24,19 @@ Given(/^I shoot to position "([^"]*)":"([^"]*)"$/) do |x, y|
 end
 
 Then(/^I get hit$/) do
-  expect(page.has_content?(:shooting_result)).to eq true
+  expect(page).to have_content("hit")
 end
 
-#Then(/^I get water$/) do
-#  expect(@result).to eq("water")
-#end
+Then(/^I get water$/) do
+  expect(page).to have_content("water")
+end
 
-#Then(/^I get sink$/) do
-#  expect(@result).to eq("sink")
-#end
+Then(/^I get sink$/) do
+  visit '/mipagina'
+  fill_in(:xShootCoord, :with => 3)
+  fill_in(:yShootCoord, :with => 3)
+  click_button "shoot"
+  expect(page).to have_content("sink")
+end
 
 

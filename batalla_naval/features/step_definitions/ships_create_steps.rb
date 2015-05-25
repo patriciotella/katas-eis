@@ -18,7 +18,7 @@ Given(/^a board with dimensions "(\d+)" x "(\d+)"$/) do |x, y|
   click_button "inciar_partida"
 end
 
-Given(/^I create a small ship in position "([^"]*)" :"([^"]*)"$/) do |x, y|
+Given(/^I create a small ship in position "([^"]*)":"([^"]*)"$/) do |x, y|
   fill_in 'xSmallCoord' , with:x
   fill_in 'ySmallCoord' , with:y
   click_button "add_small_ship"
@@ -29,7 +29,7 @@ Then(/^position "([^"]*)":"([^"]*)" is not empty$/) do |x, y|
   fill_in 'xCoord', with:x
   fill_in 'yCoord', with:y
   click_button "inspect_coord"
-  expect(page.has_content?(:coord_result)).should_not eq "water"
+  expect(page).to have_content("water")
 end
 
 Given(/^I create a large ship in position "([^"]*)":"([^"]*)"$/) do |x, y|
