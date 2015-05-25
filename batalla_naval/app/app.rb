@@ -6,13 +6,7 @@ module Battleship
     register Padrino::Rendering
     register Padrino::Helpers
     register Padrino::Mailer
-    #register Padrino::Sprockets
-    #register Padrino::Admin::AccessControl
-    #sprockets :minify => (Padrino.env == :production)
 
-
-    #use Rack::Session::Pool
-    #disable :protect_from_csrf
     enable :sessions
 
     get '/' do
@@ -23,19 +17,28 @@ module Battleship
       render 'batalla/inicio'
     end
 
+    get 'volver' do
+      render 'batalla/inicio'
+    end
+
+    get 'juegoiniciado' do
+      render 'batalla/juego_iniciado'
+    end
+
     post 'creation' do
       @xBoard = params[:xBoard]
       @yBoard = params[:yBoard]
       @game = Board.new(@xBoard.to_i,@yBoard.to_i)
       session[:game] = @game
-      render 'batalla/inicio'
+      session[:medidas] = "#{@xBoard},#{@yBoard}"
+      render 'batalla/juego_iniciado'
     end
 
     post 'getCoord' do
       @xCoord = params[:xCoord]
       @yCoord = params[:yCoord]
       @coord_result = session[:game].get_data_of(@xCoord.to_i,@yCoord.to_i)
-      render 'batalla/inicio'
+      render 'batalla/juego_iniciado'
     end
 
     post 'alocate_small_ship' do
@@ -50,7 +53,7 @@ module Battleship
         @exception_message=exc.message
       end
 
-      render 'batalla/inicio'
+      render 'batalla/juego_iniciado'
     end
 
     post 'alocate_large_ship' do
@@ -64,7 +67,7 @@ module Battleship
         @exception_message=exc.message
       end
 
-      render 'batalla/inicio'
+      render 'batalla/juego_iniciado'
     end
 
     post 'shoot_position' do
@@ -79,7 +82,7 @@ module Battleship
         @exception_message=exc.message
       end
 
-      render 'batalla/inicio'
+      render 'batalla/juego_iniciado'
     end
 
   end

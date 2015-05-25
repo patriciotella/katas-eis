@@ -17,7 +17,7 @@ Given(/^a large ship in position: "([^"]*)":"([^"]*)"$/) do |x, y|
 end
 
 Given(/^I shoot to position "([^"]*)":"([^"]*)"$/) do |x, y|
-  visit '/mipagina'
+  visit '/juegoiniciado'
   fill_in(:xShootCoord, :with => x)
   fill_in(:yShootCoord, :with => y)
   click_button "shoot"
@@ -32,7 +32,7 @@ Then(/^I get water$/) do
 end
 
 Then(/^I get sink$/) do
-  visit '/mipagina'
+  visit '/juegoiniciado'
   fill_in(:xShootCoord, :with => 3)
   fill_in(:yShootCoord, :with => 3)
   click_button "shoot"

@@ -1,59 +1,28 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
-          <meta charset="utf-8">
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </head>
     <body>
 
         <h1>Batalla Naval</h1>
 
-        <<form method="POST" action="creation">
+        </br>
+        </br>
+
+
+        <form method="POST" action="creation">
           <%= csrf_token_field %>
-          <p>Medidas del Tablero : <%= @xBoard %> , <%= @yBoard %> </p>
           <input type="number" name="xBoard" id="xBoard" />
           <input type="number" name="yBoard" id="yBoard" />
-          <input type="submit" value="Iniciar Partida" id="inciar_partida"/>
-        </form>
-
-
-        <p>Disparo a coord : <%= @xCoord %> , <%= @yCoord %> </p>
-        <p id="coord_result">Data en posicion : <%= @coord_result %></p>
-        <p id="shoot_result">Resultado del disparo : <%= @shooting_result %></p>
-
-        <% if @exception_message.present? %>
-        <%= @exception_message %>
-        <% end %>
-
-        <form method="POST" action="getCoord">
-          <%= csrf_token_field %>
-          Indique las coordenadas a inspeccionar:
-          <input type="number" name="xCoord" />
-          <input type="number" name="yCoord" />
-          <input type="submit" value="Inspeccionar Coordenada" id="inspect_coord"/>
-        </form>
-
-        <form method="POST" action="alocate_small_ship">
-          <%= csrf_token_field %>
-          Agregar un barco chico en :
-          <input type="number" name="xSmallCoord" />
-          <input type="number" name="ySmallCoord" />
-          <input type="submit" value="Add Small Ship" id="add_small_ship"/>
-        </form>
-
-        <form method="POST" action="alocate_large_ship">
-          <%= csrf_token_field %>
-          Agregar un barco grande en :
-          <input type="text" name="xLargeCoord" />
-          <input type="text" name="yLargeCoord" />
-          <input type="submit" value="Add Large Ship" id="add_large_ship"/>
-        </form>
-
-        <form method="POST" action="shoot_position">
-          <%= csrf_token_field %>
-          Disparar a posicion :
-          <input type="text" name="xShootCoord" />
-          <input type="text" name="yShootCoord" />
-          <input type="submit" value="Disparar" id="shoot"/>
+          <button type="submit" class="btn btn-sm btn-success" id="inciar_partida">Iniciar Partida</button>
         </form>
 
     </body>

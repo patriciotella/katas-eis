@@ -11,7 +11,7 @@ end
 World(WithinHelpers)
 
 Then(/^it will raise an error for out of board location$/) do
-  visit '/mipagina'
+  visit '/juegoiniciado'
   fill_in(:xLargeCoord, :with => 3)
   fill_in(:yLargeCoord, :with => 5)
   click_button "add_large_ship"
@@ -19,7 +19,7 @@ Then(/^it will raise an error for out of board location$/) do
 end
 
 Then(/^it will raise an error for shooting out of the board$/) do
-  visit '/mipagina'
+  visit '/juegoiniciado'
   fill_in(:xShootCoord, :with => 3)
   fill_in(:yShootCoord, :with => 5)
   click_button "shoot"

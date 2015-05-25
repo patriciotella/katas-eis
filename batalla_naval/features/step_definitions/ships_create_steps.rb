@@ -19,21 +19,20 @@ Given(/^a board with dimensions "(\d+)" x "(\d+)"$/) do |x, y|
 end
 
 Given(/^I create a small ship in position "([^"]*)":"([^"]*)"$/) do |x, y|
+  visit '/juegoiniciado'
   fill_in 'xSmallCoord' , with:x
   fill_in 'ySmallCoord' , with:y
   click_button "add_small_ship"
 end
 
 Then(/^position "([^"]*)":"([^"]*)" is not empty$/) do |x, y|
-  visit '/mipagina'
   fill_in 'xCoord', with:x
   fill_in 'yCoord', with:y
   click_button "inspect_coord"
-  expect(page).to have_content("water")
+  expect(page).should_not have_content("water")
 end
 
 Given(/^I create a large ship in position "([^"]*)":"([^"]*)"$/) do |x, y|
-  #visit '/mipagina'
   fill_in(:xLargeCoord, :with => x)
   fill_in(:yLargeCoord, :with => y)
   click_button "add_large_ship"
