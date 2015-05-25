@@ -33,6 +33,7 @@ Then(/^position "([^"]*)":"([^"]*)" is not empty$/) do |x, y|
 end
 
 Given(/^I create a large ship in position "([^"]*)":"([^"]*)"$/) do |x, y|
+  #visit '/mipagina'
   fill_in(:xLargeCoord, :with => x)
   fill_in(:yLargeCoord, :with => y)
   click_button "add_large_ship"

@@ -11,8 +11,8 @@ module Battleship
     #sprockets :minify => (Padrino.env == :production)
 
 
-    use Rack::Session::Pool
-    disable :protect_from_csrf
+    #use Rack::Session::Pool
+    #disable :protect_from_csrf
     enable :sessions
 
     get '/' do
@@ -47,23 +47,23 @@ module Battleship
       render 'batalla/inicio'
     end
 
-    #post 'alocate_large_ship' do
-    #  @xLargeCoord = params[:xLargeCoord]
-    #  @yLargeCoord = params[:yLargeCoord]
-    #  @game = session[:game]
-    #  @game.alocate_large_ship_in(@xLargeCoord.to_i,@yLargeCoord.to_i)
-    #  session[:game]=@game
-    #  render 'batalla/inicio'
-    #end
+    post 'alocate_large_ship' do
+      @xLargeCoord = params[:xLargeCoord]
+      @yLargeCoord = params[:yLargeCoord]
+      @game = session[:game]
+      @game.alocate_large_ship_in(@xLargeCoord.to_i,@yLargeCoord.to_i)
+      session[:game]=@game
+      render 'batalla/inicio'
+    end
 
-    #post 'shoot_position' do
-    #  @xShootCoord = params[:xShootCoord]
-    #  @yShootCoord = params[:yShootCoord]
-    #  @game = session[:game]
-    #  @shooting_result = @game.shoot_position(@xShootCoord.to_i,@yShootCoord.to_i).to_s
-    #  session[:game]=@game
-    #  render 'batalla/inicio'
-    #end
+    post 'shoot_position' do
+      @xShootCoord = params[:xShootCoord]
+      @yShootCoord = params[:yShootCoord]
+      @game = session[:game]
+      @shooting_result = @game.shoot_position(@xShootCoord.to_i,@yShootCoord.to_i).to_s
+      session[:game]=@game
+      render 'batalla/inicio'
+    end
 
   end
 end
