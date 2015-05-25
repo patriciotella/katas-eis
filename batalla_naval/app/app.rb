@@ -39,29 +39,46 @@ module Battleship
     end
 
     post 'alocate_small_ship' do
-      @xSmallCoord = params[:xSmallCoord]
-      @ySmallCoord = params[:ySmallCoord]
-      @game = session[:game]
-      @game.alocate_small_ship_in(@xSmallCoord.to_i,@ySmallCoord.to_i)
-      session[:game]=@game
+
+      begin
+        @xSmallCoord = params[:xSmallCoord]
+        @ySmallCoord = params[:ySmallCoord]
+        @game = session[:game]
+        @game.alocate_small_ship_in(@xSmallCoord.to_i,@ySmallCoord.to_i)
+        session[:game]=@game
+      rescue InvalidLocation => exc
+        @exception_message=exc.message
+      end
+
       render 'batalla/inicio'
     end
 
     post 'alocate_large_ship' do
-      @xLargeCoord = params[:xLargeCoord]
-      @yLargeCoord = params[:yLargeCoord]
-      @game = session[:game]
-      @game.alocate_large_ship_in(@xLargeCoord.to_i,@yLargeCoord.to_i)
-      session[:game]=@game
+      begin
+        @xLargeCoord = params[:xLargeCoord]
+        @yLargeCoord = params[:yLargeCoord]
+        @game = session[:game]
+        @game.alocate_large_ship_in(@xLargeCoord.to_i,@yLargeCoord.to_i)
+        session[:game]=@game
+      rescue InvalidLocation => exc
+        @exception_message=exc.message
+      end
+
       render 'batalla/inicio'
     end
 
     post 'shoot_position' do
-      @xShootCoord = params[:xShootCoord]
-      @yShootCoord = params[:yShootCoord]
-      @game = session[:game]
-      @shooting_result = @game.shoot_position(@xShootCoord.to_i,@yShootCoord.to_i)
-      session[:game]=@game
+
+      begin
+        @xShootCoord = params[:xShootCoord]
+        @yShootCoord = params[:yShootCoord]
+        @game = session[:game]
+        @shooting_result = @game.shoot_position(@xShootCoord.to_i,@yShootCoord.to_i)
+        session[:game]=@game
+      rescue InvalidLocation => exc
+        @exception_message=exc.message
+      end
+
       render 'batalla/inicio'
     end
 

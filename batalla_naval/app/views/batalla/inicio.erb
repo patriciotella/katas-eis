@@ -20,6 +20,10 @@
         <p id="coord_result">Data en posicion : <%= @coord_result %></p>
         <p id="shoot_result">Resultado del disparo : <%= @shooting_result %></p>
 
+        <% if @exception_message.present? %>
+        <%= @exception_message %>
+        <% end %>
+
         <form method="POST" action="getCoord">
           <%= csrf_token_field %>
           Indique las coordenadas a inspeccionar:
