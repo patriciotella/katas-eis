@@ -1,4 +1,4 @@
-require_relative '../../../batalla_naval/app/models/battle_ship.rb'
+require_relative '../../app/models/battle_ship.rb'
 
 Given(/^I create a large ship in position "([^"]*)" :"([^"]*)"$/) do |x, y|
   begin

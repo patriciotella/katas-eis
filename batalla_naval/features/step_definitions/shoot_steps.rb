@@ -1,4 +1,4 @@
-require_relative '../../../batalla_naval/app/models/battle_ship.rb'
+require_relative '../../app/models/battle_ship.rb'
 
 Given(/^a large ship in position: "([^"]*)":"([^"]*)"$/) do |x, y|
   @board.alocate_large_ship_in(x.to_i,y.to_i)

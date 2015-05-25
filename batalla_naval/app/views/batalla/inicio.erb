@@ -16,23 +16,23 @@
         </form>
 
 
-        <!--<p>Disparo a coord : <%= @xCoord %> , <%= @yCoord %> </p>
+        <p>Disparo a coord : <%= @xCoord %> , <%= @yCoord %> </p>
         <p>Data en posicion : <%= @coord_result %></p>
-        <p>Resultado del disparo : <%= @shooting_result %></p><--
+        <p>Resultado del disparo : <%= @shooting_result %></p>
 
-        <!--<form method="POST" action="getCoord">
+        <form method="POST" action="getCoord">
           <%= csrf_token_field %>
           Indique las coordenadas a inspeccionar:
-          <input type="text" name="xCoord" />
-          <input type="text" name="yCoord" />
+          <input type="number" name="xCoord" />
+          <input type="number" name="yCoord" />
           <input type="submit" value="Inspeccionar Coordenada" id="inspect_coord"/>
-        </form>-->
+        </form>
 
         <form method="POST" action="alocate_small_ship">
           <%= csrf_token_field %>
           Agregar un barco chico en :
-          <input type="text" name="xSmallCoord" />
-          <input type="text" name="ySmallCoord" />
+          <input type="number" name="xSmallCoord" />
+          <input type="number" name="ySmallCoord" />
           <input type="submit" value="Add Small Ship" id="add_small_ship"/>
         </form>
 
