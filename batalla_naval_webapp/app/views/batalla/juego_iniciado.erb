@@ -25,6 +25,12 @@
 
         </br>
 
+        <% if @exception_message.present? %>
+        <div class="alert alert-danger" role="alert">
+          <strong><%= @exception_message %></strong>
+        </div>
+        <% end %>
+
         </br>
 
         <form method="POST" action="getCoord">
