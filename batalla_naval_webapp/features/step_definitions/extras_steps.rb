@@ -17,3 +17,11 @@ Then(/^it will raise an error for out of board location$/) do
   click_button "add_large_ship"
   expect(page).to have_content("location is out of board")
 end
+
+Then(/^it will raise an error for shooting out of the board$/) do
+  visit '/juegoiniciado'
+  fill_in(:xShootCoord, :with => 3)
+  fill_in(:yShootCoord, :with => 5)
+  click_button "shoot"
+  expect(page).to have_content("location is out of board")
+end

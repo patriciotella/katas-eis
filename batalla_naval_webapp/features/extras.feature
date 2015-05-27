@@ -9,6 +9,6 @@ Feature: Extras
     Then it will raise an error for out of board location
 
 
-  #Scenario: Shooting in a invalid location
-  #  Given I shoot to position "3":"5"
-  #  Then it will raise an error for shooting out of the board
+  Scenario: Shooting in a invalid location
+    Given I shoot to position "3":"5"
+    Then it will raise an error for shooting out of the board
