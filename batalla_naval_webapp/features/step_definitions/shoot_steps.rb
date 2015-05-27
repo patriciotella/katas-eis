@@ -31,3 +31,11 @@ Then(/^I get water$/) do
   expect(page).to have_content("water")
 end
 
+Then(/^I get sink$/) do
+  visit '/juegoiniciado'
+  fill_in(:xShootCoord, :with => 3)
+  fill_in(:yShootCoord, :with => 3)
+  click_button "shoot"
+  expect(page).to have_content("sink")
+end
+
