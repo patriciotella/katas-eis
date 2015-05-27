@@ -27,4 +27,7 @@ Then(/^I get hit$/) do
   expect(page).to have_content("hit")
 end
 
+Then(/^I get water$/) do
+  expect(page).to have_content("water")
+end
 

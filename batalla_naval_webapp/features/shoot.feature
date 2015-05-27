@@ -8,9 +8,9 @@ Feature: Shoot
     Given I shoot to position "3":"3"
     Then I get hit
 
-  #Scenario: Shoot and miss
-  #  Given I shoot to position "3":"2"
-  #  Then I get water
+  Scenario: Shoot and miss
+    Given I shoot to position "3":"2"
+    Then I get water
 
   #Scenario: Shoot and sink
   #  Given I shoot to position "3":"4"
