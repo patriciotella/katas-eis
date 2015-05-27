@@ -8,7 +8,7 @@ Feature: Ships create
     Given I create a small ship in position "3":"3"
     Then position "3":"3" is not empty
 
-  #Scenario: Create a large ship in a valid location
-  #  Given I create a large ship in position "3":"3"
-  #  Then position "3":"3" is not empty
-  #  And position "3":"4" is not empty
+  Scenario: Create a large ship in a valid location
+    Given I create a large ship in position "3":"3"
+    Then position "3":"3" is not empty
+    And position "3":"4" is not empty

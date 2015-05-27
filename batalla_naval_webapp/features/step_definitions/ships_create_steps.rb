@@ -31,3 +31,9 @@ Then(/^position "([^"]*)":"([^"]*)" is not empty$/) do |x, y|
   click_button "inspect_coord"
   expect(page).should_not have_content("water")
 end
+
+Given(/^I create a large ship in position "([^"]*)":"([^"]*)"$/) do |x, y|
+  fill_in(:xLargeCoord, :with => x)
+  fill_in(:yLargeCoord, :with => y)
+  click_button "add_large_ship"
+end

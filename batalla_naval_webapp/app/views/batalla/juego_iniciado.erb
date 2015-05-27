@@ -46,6 +46,15 @@
         </form>
 
         </br>
+
+        <form method="POST" action="alocate_large_ship">
+          <%= csrf_token_field %>
+          Agregar un barco grande en :
+          <input type="text" name="xLargeCoord" />
+          <input type="text" name="yLargeCoord" />
+          <button type="submit" class="btn btn-sm btn-info" id="add_large_ship">Add Large Ship</button>
+        </form>
+
         </br>
 
         <form method="GET" action="volver">

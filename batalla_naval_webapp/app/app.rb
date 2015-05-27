@@ -50,5 +50,16 @@ module Battleship
       session[:game]=@game
       render 'batalla/juego_iniciado'
     end
+
+    post 'alocate_large_ship' do
+
+      @xLargeCoord = params[:xLargeCoord]
+      @yLargeCoord = params[:yLargeCoord]
+      @game = session[:game]
+      @game.alocate_large_ship_in(@xLargeCoord.to_i,@yLargeCoord.to_i)
+      session[:game]=@game
+      render 'batalla/juego_iniciado'
+    end
+
   end
 end
