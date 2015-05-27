@@ -16,6 +16,12 @@
 
         </br>
         </br>
+        <form method="POST" action="creation">
+          <%= csrf_token_field %>
+          <input type="number" name="xBoard" id="xBoard" />
+          <input type="number" name="yBoard" id="yBoard" />
+          <button type="submit" class="btn btn-sm btn-success" id="inciar_partida">Iniciar Partida</button>
+        </form>
 
     </body>
 </html>

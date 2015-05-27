@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+    <body>
+
+        <h1>Batalla Naval</h1>
+        <h2>Tablero <%= session[:medidas] %></h2>
+        </br>
+        </br>
+
+
+        </br>
+
+        <p id="coord_result">Data en posicion : <%= @coord_result %></p>
+        <p id="shoot_result">Resultado del disparo : <%= @shooting_result %></p>
+
+        </br>
+
+        </br>
+
+        <form method="POST" action="getCoord">
+          <%= csrf_token_field %>
+          Indique las coordenadas a inspeccionar:
+          <input type="number" name="xCoord" />
+          <input type="number" name="yCoord" />
+          <button type="submit" class="btn btn-sm btn-warning" id="inspect_coord">Inspect Coord</button>
+        </form>
+
+        </br>
+
+        <form method="POST" action="alocate_small_ship">
+          <%= csrf_token_field %>
+          Agregar un barco chico en :
+          <input type="number" name="xSmallCoord" />
+          <input type="number" name="ySmallCoord" />
+          <button type="submit" class="btn btn-sm btn-info" id="add_small_ship">Add Small Ship</button>
+        </form>
+
+        </br>
+        </br>
+
+        <form method="GET" action="volver">
+          <button type="submit" class="btn btn-sm btn-success" >Empezar de nuevo</button>
+        </form>
+
+    </body>
+</html>
