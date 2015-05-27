@@ -9,3 +9,6 @@ bundle exec rake
 cd ..
 cd batalla_naval
 bundle exec rake
+cd ..
+cd batalla_naval_webapp
+bundle exec rake
